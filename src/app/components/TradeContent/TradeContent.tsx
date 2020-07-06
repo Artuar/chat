@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chat } from "../Chat/Chat";
+import { TradeChat } from "../TradeChat/TradeChat";
 import { TradeInfo } from "../TradeInfo/TradeInfo";
 import { useParams } from "react-router";
 import { useEffect } from "react";
@@ -39,7 +39,7 @@ export const TradeContent: React.FunctionComponent = () => {
 
   return (
     <>
-      <Chat trade={trade} />
+      <TradeChat trade={trade} />
       <TradeInfo trade={trade} />
     </>
   );

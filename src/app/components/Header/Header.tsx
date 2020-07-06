@@ -24,8 +24,12 @@ export const Header: React.FunctionComponent = () => {
   };
 
   return (
-    <header className={styles.header} id="site-header">
-      <div className={styles.logo} onClick={changeUser} id="site-header-logo">
+    <header className={styles.header} data-hook="site-header">
+      <div
+        className={styles.logo}
+        onClick={changeUser}
+        data-hook="site-header-logo"
+      >
         PΛXFUL
       </div>
     </header>

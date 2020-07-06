@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "./Chat.scss";
+import * as styles from "./TradeChat.scss";
 import { Message } from "../Message/Message";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/messages/messages.actions";
@@ -27,7 +27,7 @@ const useDispatchActions = () => {
   };
 };
 
-export const Chat: React.FunctionComponent<IChat> = ({ trade }) => {
+export const TradeChat: React.FunctionComponent<IChat> = ({ trade }) => {
   const { messages } = useStateSelectors();
   const {
     fetchMessages,
@@ -65,13 +65,32 @@ export const Chat: React.FunctionComponent<IChat> = ({ trade }) => {
   return (
     <section className={styles.chat} data-hook="trade-chat">
       <header className={styles.header}>
-        <button className={styles.deleteButton} onClick={deleteCurrentTrade} />
-        <span className={styles.card}>{trade.card}</span>
+        <button
+          className={styles.deleteButton}
+          data-hook="trade-chat-delete-button"
+          onClick={deleteCurrentTrade}
+        />
+        <span className={styles.card} data-hook="trade-chat-card">
+          {trade.card}
+        </span>
         <div className={styles.counterparty}>
-          <span className={styles.name}>{trade.counterparty.name}</span>{" "}
-          <span className={styles.likes}>+{trade.counterparty.likes}</span>
+          <span
+            className={styles.name}
+            data-hook="trade-chat-counterparty-name"
+          >
+            {trade.counterparty.name}
+          </span>{" "}
+          <span
+            className={styles.likes}
+            data-hook="trade-chat-counterparty-likes"
+          >
+            +{trade.counterparty.likes}
+          </span>
           {" / "}
-          <span className={styles.dislikes}>
+          <span
+            className={styles.dislikes}
+            data-hook="trade-chat-counterparty-dislikes"
+          >
             -{trade.counterparty.dislikes}
           </span>
         </div>
@@ -85,13 +104,18 @@ export const Chat: React.FunctionComponent<IChat> = ({ trade }) => {
 
       <footer className={styles.footer}>
         <input
+          data-hook="trade-chat-message-input"
           value={text}
           className={styles.messageField}
           type="text"
           placeholder="Type your message..."
           onChange={changeInputHandler}
         />
-        <button className={styles.sendButton} onClick={send}>
+        <button
+          className={styles.sendButton}
+          data-hook="trade-chat-send-button"
+          onClick={send}
+        >
           SEND
         </button>
       </footer>

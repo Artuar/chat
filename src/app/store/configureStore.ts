@@ -9,7 +9,7 @@ import { services, Services } from "app/services/rootServices";
 
 export const logger: Middleware = () => (next) => (action) => {
   if (process.env.NODE_ENV !== "production") {
-    // console.log(action);
+    console.log(action);
   }
   return next(action);
 };

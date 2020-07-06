@@ -18,6 +18,6 @@ describe("Header", () => {
 
   it("should render logo without throwing an error", () => {
     const { component } = mountHeaderComponent();
-    expect(component.find("#site-header-logo")).toHaveLength(1);
+    expect(component.find("[data-hook='site-header-logo']")).toHaveLength(1);
   });
 });

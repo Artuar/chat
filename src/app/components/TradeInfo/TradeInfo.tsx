@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import classNames from "classnames";
 import { FormattedTrade, TradeStatus } from "../../store/trades/trades.types";
 import { currenciesRateSelector } from "../../store/currenciesRate/currenciesRate.selectors";
+import { getTimeDiff } from "./TradeInfo.helpers";
 
 export interface ITradeInfo {
   trade: FormattedTrade;
@@ -22,16 +23,7 @@ export const TradeInfo: React.FunctionComponent<ITradeInfo> = ({ trade }) => {
 
   const getTimeText = () => {
     const beginning = isPaid ? "Finished" : "Started";
-    const date = trade.endDate || trade.startDate;
-    const minutes = (new Date().getTime() - date) / 1000 / 60;
-    if (minutes < 60) {
-      return `${beginning} ${minutes.toFixed(0)} minutes ago`;
-    }
-    const hours = minutes / 60;
-    if (hours < 24) {
-      return `${beginning} ${hours.toFixed(0)} hours ago`;
-    }
-    return `${beginning} ${(hours / 24).toFixed(0)} days ago`;
+    return `${beginning} ${getTimeDiff(trade.endDate || trade.startDate)}`;
   };
 
   const isPaid = trade.status === TradeStatus.Paid;

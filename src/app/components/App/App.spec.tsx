@@ -53,7 +53,7 @@ describe("AppComponent", () => {
 
   it("should render Header correctly", () => {
     const { component } = mountAppComponent();
-    expect(component.find("#site-header")).toHaveLength(1);
+    expect(component.find("[data-hook='site-header']")).toHaveLength(1);
   });
 
   it("should render Content correctly", () => {
