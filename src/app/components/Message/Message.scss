@@ -1,0 +1,67 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.message {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 60px 0 0;
+
+  .photo {
+    @include photoIcon;
+  }
+
+  .textWrapper {
+    padding: 0 0 0 20px;
+    position: relative;
+
+    &::before {
+      content: '◄';
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      color: $white;
+      text-shadow: -2px 0px $lightGrey;
+    }
+  }
+
+  .text {
+    border: 1px solid $lightGrey;
+    background-color: $white;
+    padding: 12px 18px;
+    word-break: break-word;
+  }
+
+  .time {
+    color: $grey;
+    font-size: 12px;
+    padding-top: 3px;
+  }
+}
+
+.received {
+  flex-direction: row-reverse;
+  padding-left: 60px;
+  padding-right: 0;
+
+  .textWrapper {
+    padding: 0 20px 0 0;
+
+    &::before {
+      content: '►';
+      left: auto;
+      right: 9px;
+      color: $blue;
+      text-shadow: none;
+    }
+
+    .text {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+
+    .time {
+      text-align: right;
+    }
+  }
+}

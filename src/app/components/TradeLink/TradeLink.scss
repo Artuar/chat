@@ -1,0 +1,108 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.tradeLink {
+  padding: 24px 12px;
+  border-color: transparent;
+  border-bottom-color: $lightGrey;
+  border-style: solid;
+  border-width: 1px 1px 1px 0;
+  display: flex;
+  cursor: pointer;
+  color: $grey;
+  margin-top: -1px;
+  margin-right: 20px;
+
+  &:hover, &.selected {
+    border-top-color: $lightGrey;
+    background-color: $whiteSmoke;
+  }
+
+  &.selected {
+    border-color: $lightGrey;
+    border-radius: 0 5px 5px 0;
+    margin-right: 0px;
+    padding-left: 24px;
+    cursor: default;
+    transition-property: margin-right, padding-left, border-width;
+    transition-duration: 0.2s;
+
+    .point {
+      background-color: $lightGrey;
+    }
+
+    .name {
+      color: $blue;
+    }
+  }
+}
+
+.notification {
+  padding: 2px 10px;
+
+  .point {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: $grey;
+    border: 5px solid $grey;
+
+    &.unseen {
+      border-color: $green;
+    }
+  }
+}
+
+.data {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  .name {
+    font-weight: 700;
+  }
+
+  .card {
+    color: $black;
+    font-size: 18px;
+    padding: 8px 0 4px;
+
+  }
+
+  .courses {
+  }
+}
+
+
+.counterparty {
+  flex-basis: 80px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  .photo {
+    @include photoIcon;
+  }
+
+  .status {
+    font-weight: 700;
+
+    &.paid {
+      color: $green;
+    }
+  }
+}
+
+
+@media(max-width: 1100px){
+  .tradeLink {
+    padding: 12px;
+    .data {
+      display: none;
+    }
+
+    .notification {
+      padding: 0;
+    }
+  }
+}

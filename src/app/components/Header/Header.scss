@@ -1,0 +1,13 @@
+@import '../../styles/constants.scss';
+
+.header {
+  background-color: $blueGrey;
+  color: $white;
+  padding: 12px 24px;
+}
+
+.logo {
+  font-size: 36px;
+  letter-spacing: 6px;
+  cursor: pointer;
+}

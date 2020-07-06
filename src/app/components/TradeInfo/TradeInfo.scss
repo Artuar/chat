@@ -1,0 +1,117 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.tradeInfo {
+  flex-basis: 350px;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.header {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading {
+  color: $black;
+  padding: 24px 0 0 0;
+
+  .name {
+    font-weight: 700;
+  }
+}
+
+.time {
+  font-size: 16px;
+  padding-bottom: 32px;
+}
+
+.releaseButton {
+  color: $white;
+  background-color: $green;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 22px;
+  @include customButton;
+
+  &:hover {
+    box-shadow: 0 0 5px $grey;
+  }
+}
+
+.infoGrid {
+  padding: 32px 24px;
+  color: $black;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  & > * {
+    background-color: $white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid $lightGrey;
+    text-align: center;
+  }
+
+  & > *:nth-child(2n + 1) {
+    border-right: 1px solid $lightGrey;
+  }
+
+  .dislikes {
+    color: $red;
+    font-weight: 700;
+  }
+
+  .likes {
+    color: $green;
+    font-weight: 700;
+  }
+
+  .photo {
+    @include photoIcon;
+  }
+
+  .hash, .usd, .btc {
+    color: $grey;
+  }
+
+  .status {
+    color: $grey;
+    font-weight: 700;
+
+    &.paid {
+      color: $green;
+    }
+  }
+}
+
+@media(max-width: 1100px){
+  .tradeInfo {
+    flex-basis: 150px;
+    .infoGrid {
+      padding: 12px;
+      grid-template-columns: auto;
+
+      & > * {
+        padding: 12px;
+        height: 40px;
+        border-right: none;
+      }
+
+      .counterparty {
+        display: none;
+      }
+    }
+
+    .releaseButton {
+      font-size: 16px;
+    }
+  }
+}

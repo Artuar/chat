@@ -1,0 +1,21 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+html {
+  background-color: $white;
+  height: 100%;
+  font-size: 14px;
+  color: $darkGrey;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+:global(#root) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

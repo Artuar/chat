@@ -1,0 +1,17 @@
+@mixin photoIcon {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+@mixin customButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
