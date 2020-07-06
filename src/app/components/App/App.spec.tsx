@@ -1,33 +1,33 @@
 import { AppComponent } from "./App";
-import { ReactWrapper} from "enzyme";
-import {tradesDefaultState} from "../../store/trades/trades.reducer";
-import {testWrapper} from "../../../../test/testWrapper";
+import { ReactWrapper } from "enzyme";
+import { tradesDefaultState } from "../../store/trades/trades.reducer";
+import { testWrapper } from "../../../../test/testWrapper";
 
 const TRADE = {
-  "id": 1,
-  "num": 13,
-  "seller": {
-    "id": 100500,
-    "photoUrl": "/assets/rabbit.jpg",
-    "name": "Rabbit",
-    "likes": 3,
-    "dislikes": 0,
+  id: 1,
+  num: 13,
+  seller: {
+    id: 100500,
+    photoUrl: "/assets/rabbit.jpg",
+    name: "Rabbit",
+    likes: 3,
+    dislikes: 0,
   },
-  "buyer": {
-    "id": 500100,
-    "photoUrl": "/assets/fox.jpg",
-    "name": "Fox",
-    "likes": 37,
-    "dislikes": 1,
+  buyer: {
+    id: 500100,
+    photoUrl: "/assets/fox.jpg",
+    name: "Fox",
+    likes: 37,
+    dislikes: 1,
   },
-  "card": "Amazon Gift Card",
-  "amount": 77,
-  "currencyFrom": "USD",
-  "currencyTo": "BTC",
-  "status": "paid",
-  "hash": "45aFD3Rr",
-  "startDate": 1593780443845,
-  "endDate": 1593780445845
+  card: "Amazon Gift Card",
+  amount: 77,
+  currencyFrom: "USD",
+  currencyTo: "BTC",
+  status: "paid",
+  hash: "45aFD3Rr",
+  startDate: 1593780443845,
+  endDate: 1593780445845,
 };
 
 describe("AppComponent", () => {
@@ -43,7 +43,7 @@ describe("AppComponent", () => {
         trades: {
           ...tradesDefaultState,
           trades: [TRADE],
-        }
+        },
       },
     });
     mountedComponent = component;

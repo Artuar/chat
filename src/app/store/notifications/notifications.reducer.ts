@@ -3,7 +3,7 @@ import { getType } from "typesafe-actions";
 import * as actions from "./notifications.actions";
 
 export interface NotificationsState {
-  tradeIds: number[],
+  tradeIds: number[];
 }
 
 export const notificationsDefaultState: NotificationsState = {
@@ -24,7 +24,7 @@ export const notificationsReducer = (
     case getType(actions.discardNotifications): {
       return {
         ...state,
-        tradeIds: state.tradeIds.filter(id => action.payload !== id),
+        tradeIds: state.tradeIds.filter((id) => action.payload !== id),
       };
     }
     default:

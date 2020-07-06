@@ -1,7 +1,7 @@
-import {RootAction} from "app/store/rootActions";
-import {getType} from "typesafe-actions";
+import { RootAction } from "app/store/rootActions";
+import { getType } from "typesafe-actions";
 import * as actions from "./trades.actions";
-import {Trade} from "app/store/trades/trades.types";
+import { Trade } from "app/store/trades/trades.types";
 
 export interface TradesState {
   currentTradeId: number | undefined;
@@ -27,14 +27,14 @@ export const tradesReducer = (
     case getType(actions.requestTrades.success): {
       return {
         ...state,
-        trades: action.payload
+        trades: action.payload,
       };
     }
     case getType(actions.deleteTrades.success): {
       const tradeId = state.currentTradeId;
       return {
         ...state,
-        trades: state.trades.filter(({id}) => tradeId !== id),
+        trades: state.trades.filter(({ id }) => tradeId !== id),
       };
     }
     default:

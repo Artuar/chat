@@ -4,10 +4,10 @@ import { rootReducer } from "app/store/rootReducer";
 import { RootState } from "app/store/rootState";
 import { createEpicMiddleware } from "redux-observable";
 import { rootEpic } from "app/store/rootEpic";
-import {RootAction} from "app/store/rootActions";
+import { RootAction } from "app/store/rootActions";
 import { services, Services } from "app/services/rootServices";
 
-export const logger: Middleware = () => next => action => {
+export const logger: Middleware = () => (next) => (action) => {
   if (process.env.NODE_ENV !== "production") {
     // console.log(action);
   }
@@ -20,7 +20,7 @@ const epicMiddleware = createEpicMiddleware<
   RootState,
   Services
 >({
-  dependencies: services
+  dependencies: services,
 });
 
 export function configureStore(initialState?: RootState): Store<RootState> {

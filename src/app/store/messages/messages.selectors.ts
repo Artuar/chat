@@ -1,15 +1,16 @@
 import { createSelector } from "reselect";
 import { RootState } from "../rootState";
-import {MessagesState} from "./messages.reducer";
-import {currentTradeSelector} from "../trades/trades.selectors";
-import {userIdSelector} from "../user/user.selectors";
-import {MessageType} from "./messages.types";
+import { MessagesState } from "./messages.reducer";
+import { currentTradeSelector } from "../trades/trades.selectors";
+import { userIdSelector } from "../user/user.selectors";
+import { MessageType } from "./messages.types";
 
-const messagesStateSelector = (state: RootState): MessagesState => state.messages;
+const messagesStateSelector = (state: RootState): MessagesState =>
+  state.messages;
 
 export const currentMessagesSelector = createSelector(
   messagesStateSelector,
-  ({ messages }: MessagesState) => messages,
+  ({ messages }: MessagesState) => messages
 );
 
 export const formattedMessagesSelector = createSelector(
@@ -22,9 +23,10 @@ export const formattedMessagesSelector = createSelector(
     }
     const { buyer, seller } = trade;
 
-    return messages.map(({id, text, sendTime, userId}) => {
+    return messages.map(({ id, text, sendTime, userId }) => {
       const sender = buyer.id === userId ? buyer : seller;
-      const type = sender.id === currentUserId ? MessageType.Sent : MessageType.Received;
+      const type =
+        sender.id === currentUserId ? MessageType.Sent : MessageType.Received;
 
       return {
         id,
@@ -32,6 +34,7 @@ export const formattedMessagesSelector = createSelector(
         sendTime,
         userPhoto: sender.photoUrl,
         type,
-    }});
-  },
+      };
+    });
+  }
 );

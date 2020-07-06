@@ -15,6 +15,6 @@ export interface FormattedMessage {
 }
 
 export enum MessageType {
-  Sent = 'sent',
-  Received = 'received',
+  Sent = "sent",
+  Received = "received",
 }

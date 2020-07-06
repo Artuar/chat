@@ -1,6 +1,6 @@
-import { ReactWrapper} from "enzyme";
-import {Header} from "./Header";
-import {testWrapper} from "../../../../test/testWrapper";
+import { ReactWrapper } from "enzyme";
+import { Header } from "./Header";
+import { testWrapper } from "../../../../test/testWrapper";
 
 describe("Header", () => {
   let mountedComponent: ReactWrapper;

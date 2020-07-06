@@ -1,7 +1,7 @@
 import { RootAction } from "app/store/rootActions";
 import { getType } from "typesafe-actions";
 import * as actions from "./messages.actions";
-import {Message} from "app/store/messages/messages.types";
+import { Message } from "app/store/messages/messages.types";
 
 export interface MessagesState {
   messages: Message[];
@@ -19,16 +19,13 @@ export const messagesReducer = (
     case getType(actions.requestMessages.success): {
       return {
         ...state,
-        messages: action.payload
+        messages: action.payload,
       };
     }
     case getType(actions.sendMessage.success): {
       return {
         ...state,
-        messages: [
-          action.payload,
-          ...state.messages,
-        ]
+        messages: [action.payload, ...state.messages],
       };
     }
     default:

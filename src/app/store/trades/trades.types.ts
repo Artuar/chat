@@ -1,4 +1,4 @@
-import {Currency} from "app/store/currenciesRate/currenciesRate.types";
+import { Currency } from "app/store/currenciesRate/currenciesRate.types";
 
 export interface Trade {
   id: number;
@@ -39,11 +39,11 @@ export interface FormattedTrade {
 }
 
 export enum TradeStatus {
-  Paid = 'paid',
-  Unpaid = 'unpaid',
+  Paid = "paid",
+  Unpaid = "unpaid",
 }
 
 export enum TradeType {
-  Sell = 'sell',
-  Buy = 'buy',
+  Sell = "sell",
+  Buy = "buy",
 }

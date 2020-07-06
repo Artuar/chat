@@ -3,7 +3,8 @@ import { RootState } from "../rootState";
 import { CurrencyRateState } from "./currenciesRate.reducer";
 import { ChosenCurrencies } from "./currenciesRate.types";
 
-const currenciesRateStateSelector = (state: RootState): CurrencyRateState => state.currenciesRates;
+const currenciesRateStateSelector = (state: RootState): CurrencyRateState =>
+  state.currenciesRates;
 
 export const chosenCurrenciesSelector = createSelector(
   currenciesRateStateSelector,

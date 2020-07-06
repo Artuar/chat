@@ -11,4 +11,9 @@ export type TradesAction = ActionType<typeof tradesActions>;
 export type MessagesAction = ActionType<typeof messagesActions>;
 export type NotificationsAction = ActionType<typeof notificationsActions>;
 
-export type RootAction = CurrenciesRateAction | UserAction | TradesAction | MessagesAction | NotificationsAction;
+export type RootAction =
+  | CurrenciesRateAction
+  | UserAction
+  | TradesAction
+  | MessagesAction
+  | NotificationsAction;
